@@ -1,0 +1,217 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-image: linear-gradient(to right, #f8cdda, hsl(336, 97%, 47%));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* تخلي العناصر تحت بعض */
+  align-items: center;
+}
+
+/* ========== Container ========== */
+.container {
+  width: 90%;
+  height: 640px;
+  margin-top: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(to right, hsla(336, 97%, 47%, 0.6), #f8cdda76), url('HOT.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.container:hover {
+  background-image: linear-gradient(to right, hsla(336, 97%, 47%, 0.6), transparent), url('HOT.jpeg');
+}
+
+/* ========== Header ========== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+header ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  transition: 0.3s;
+}
+
+header ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+header ul li a:hover::after {
+  width: 100%;
+}
+
+/* ========== Content ========== */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  color: white;
+  max-width: 700px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  animation: typing 3s steps(12), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #f8f8f8;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.content button {
+  position: relative;
+  padding: 12px 30px;
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+  overflow: hidden;
+}
+
+.content button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.content button:hover::before {
+  left: 125%;
+}
+
+.content button:hover {
+  background-color: #e055a0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ========== About Section ========== */
+.about {
+  background-color: #fff0f5;
+  color: #333;
+  padding: 60px 40px;
+  margin-top: 40px;
+  width: 90%;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  border-radius: 15px;
+  box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #e055a0;
+  position: relative;
+}
+
+.about h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #e055a0;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: #ff69b4;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 30px;
+  width: 100%;
+}
